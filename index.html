@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteKeeper</title>
+    <!-- * Css Link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- * Box Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <!-- * Wrapper -->
+    <section class="wrapper">
+      <!-- Add Box -->
+      <div class="add-box">
+        <!-- Icon -->
+        <div class="icon">
+          <i class="bx bx-plus"></i>
+        </div>
+        <!-- Text -->
+        <p>Add new note</p>
+      </div>
+
+      <!-- Note Item
+      <div class="note">
+        <div class="details">
+          <h2>Note Title</h2>
+          <p>Note Description</p>
+        </div>
+
+        <div class="bottom">
+          <p>Note Date</p>
+
+          <div class="settings">
+            <i class="bx bx-dots-horizontal-rounded"></i>
+
+            <ul class="menu">
+              <li class="edit-icon"><i class="bx bx-edit"></i>Edit</li>
+              <li class="delete-icon"><i class="bx bx-trash"></i>Delete</li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- * Popup -->
+    <div class="popup-box">
+      <div class="popup">
+        <!-- Header -->
+        <header>
+          <!-- Popup Title -->
+          <h1 id="popup-title">New Note</h1>
+
+          <!-- Close Icon -->
+          <i class="bx bx-x"></i>
+        </header>
+
+        <!-- Form -->
+        <form>
+          <!-- Fields -->
+          <div class="fields">
+            <label for="title">Title</label>
+            <input type="text" id="title" />
+          </div>
+
+          <!-- Fields -->
+          <div class="fields">
+            <label for="description">Description</label>
+            <textarea id="description"></textarea>
+          </div>
+
+          <!-- Button -->
+          <button id="form-btn">Add</button>
+        </form>
+      </div>
+    </div>
+    <!-- * Js Connection -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

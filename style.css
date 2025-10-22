@@ -1,0 +1,215 @@
+/* * Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* * Css Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+/* * Global Styles */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  min-height: 100vh;
+}
+
+/* * Wrapper */
+.wrapper {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 265px);
+  gap: 25px;
+}
+.wrapper :where(.add-box, .note) {
+  background-color: white;
+  padding: 15px 20px 20px;
+  border-radius: 5px;
+  height: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .add-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #c850c0;
+}
+.wrapper .add-box .icon {
+  height: 78px;
+  width: 78px;
+  border-radius: 50%;
+  border: 2px dashed #c850c0;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.wrapper .add-box p {
+  font-weight: 500;
+}
+
+.wrapper .note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper .note .details {
+  max-height: 165px;
+  overflow-y: auto;
+}
+.wrapper .note .details h2 {
+  font-size: 25px;
+}
+.wrapper .note .details p {
+  color: #575757;
+  font-size: 16px;
+  margin-top: 5px;
+}
+.wrapper .note .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+.wrapper .note .bottom p {
+  font-size: 14px;
+  color: #6d6d6d;
+}
+.wrapper .note .bottom .settings i {
+  color: #6d6d6d;
+  cursor: pointer;
+  font-size: 17px;
+}
+.wrapper .note .bottom .settings {
+  position: relative;
+}
+.wrapper .note .bottom .settings .menu {
+  position: absolute;
+  bottom: -10px;
+  right: -55px;
+  z-index: 1;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  scale: 0;
+}
+/* ! Menu kısmını aktif etmek için gereken class */
+.wrapper .note .bottom .settings.show .menu {
+  scale: 1;
+}
+.wrapper .note .bottom .settings .menu li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+.wrapper .note .bottom .settings .menu li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Popup */
+
+/* Popup'ın aktif ve pasif durumu için stiller */
+.popup-box,
+.popup {
+  display: none;
+}
+
+.popup-box.show,
+.popup.show {
+  display: block;
+}
+
+.popup-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.popup header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.popup header #popup-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+.popup header i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.popup form {
+  padding: 15px 25px 35px;
+}
+.popup form .fields {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.popup form .fields label {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.popup form .fields :where(input, textarea) {
+  border: 1px solid #999;
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  text-indent: 15px;
+}
+
+.popup form .fields textarea {
+  resize: none;
+  height: 150px;
+  padding: 10px 0;
+}
+.popup form #form-btn {
+  background-color: #c850c0;
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-size: 17px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.popup form #form-btn:hover {
+  background-color: #c850c0e9;
+}
